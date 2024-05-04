@@ -1,4 +1,14 @@
-# TinyMCE
+# tinymce-wagtail-skin
+
+This is a fork of [tinymce](https://github.com/tinymce/tinymce) to develop a custom skin that makes tinyMCE look more like the wagtail admin theme.
+
+The skin for the end™ is developed in the [wagtail-skin](https://github.com/moreonion/tinymce-wagtail-skin/tree/wagtail-skin/modules/oxide) branch.
+
+See the [oxide README](https://github.com/moreonion/tinymce-wagtail-skin/blob/wagtail-skin/modules/oxide/README.md) for more instructions.
+
+The skin is located in [modules/oxide/src/less/skins/ui/wagtail](https://github.com/moreonion/tinymce-wagtail-skin/tree/wagtail-skin/modules/oxide/src/less/skins/ui/wagtail).
+
+## TinyMCE
 
 The world's #1 open source rich text editor.
 
