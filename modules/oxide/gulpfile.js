@@ -7,6 +7,7 @@ const gulpStylelint = require('gulp-stylelint');
 const cleanCSS = require('gulp-clean-css');
 const sourcemaps = require('gulp-sourcemaps');
 const rename = require('gulp-rename');
+const replace = require('gulp-replace');
 const chalk = require('chalk');
 const fs = require('fs');
 const path = require('path');
@@ -145,9 +146,18 @@ gulp.task('clean', function () {
 });
 
 //
+// copy output to the end (expects end root directory to be next to tinymce root)
+//
+gulp.task('copyToEnd', function () {
+  return gulp.src(['./build/skins/ui/wagtail/skin.css', './build/skins/ui/wagtail/content.min.css'])
+    .pipe(replace(/\n?\/\*#\s*sourceMappingURL=.*\.map\s*\*\//, ''))
+    .pipe(gulp.dest('../../../end/src/assets/tinymce'));
+})
+
+//
 // Build project and watch LESS file changes
 //
-gulp.task('css', gulp.series('lint', 'less', 'generateJs', 'minifyCss'));
+gulp.task('css', gulp.series('lint', 'less', 'generateJs', 'minifyCss', 'copyToEnd'));
 gulp.task('build', gulp.series('clean', 'css'));
 gulp.task('default', gulp.series('build'));
 

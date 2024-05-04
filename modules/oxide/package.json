@@ -32,10 +32,12 @@
     "LICENSE.txt"
   ],
   "dependencies": {
+    "normalize.css": "^8.0.1",
     "prism-themes": "^1.9.0",
     "prismjs": "^1.27.0"
   },
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "gulp-replace": "^1.1.4"
   }
 }
