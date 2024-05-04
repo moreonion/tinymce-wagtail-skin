@@ -1,0 +1,225 @@
+// Oxide Theme: we're only importing what we need
+
+@import 'src/less/theme/globals/utils';
+@import 'src/less/theme/globals/reset';
+@import 'src/less/theme/globals/global-variables';
+@import 'src/less/theme/globals/global';
+
+// @import 'src/less/theme/components/accessibility-checker/accessibility-checker';
+@import 'src/less/theme/components/advcode/advcode.less';
+// @import 'src/less/theme/components/advtemplate/advtemplate.less';
+@import 'src/less/theme/components/anchorbar/anchorbar';
+@import 'src/less/theme/components/bar/bar';
+@import 'src/less/theme/components/button/button';
+// @import 'src/less/theme/components/button/button-icon-and-text';
+@import 'src/less/theme/components/button/button-secondary';
+@import 'src/less/theme/components/button/button-icon';
+@import 'src/less/theme/components/button/button-link';
+@import 'src/less/theme/components/button/button-naked';
+// @import 'src/less/theme/components/checkbox/checkbox';
+@import 'src/less/theme/components/collection/collection';
+// @import 'src/less/theme/components/color-picker/color-picker';
+// @import 'src/less/theme/components/color-swatch/color-swatch';
+// @import 'src/less/theme/components/comments/comment';
+// @import 'src/less/theme/components/comments/user';
+@import 'src/less/theme/components/dialog/dialog';
+@import 'src/less/theme/components/dialog/blocker';
+// @import 'src/less/theme/components/dropzone/dropzone';
+@import 'src/less/theme/components/edit-area/edit-area';
+// @import 'src/less/theme/components/edit-area/inline-edit-area';
+@import 'src/less/theme/components/editor/editor';
+@import 'src/less/theme/components/form/control-wrap';
+@import 'src/less/theme/components/form/autocomplete';
+// @import 'src/less/theme/components/form/color';
+@import 'src/less/theme/components/form/label';
+@import 'src/less/theme/components/form/layout';
+@import 'src/less/theme/components/form/lock';
+@import 'src/less/theme/components/form/textfield';
+// listbox, select and textarea must be after textfield, otherwise it can't override any of the textfield settings it inherits
+@import 'src/less/theme/components/form/listbox';
+@import 'src/less/theme/components/form/select';
+@import 'src/less/theme/components/form/textarea';
+// @import 'src/less/theme/components/fullscreen/fullscreen';
+// @import 'src/less/theme/components/help/help';
+// @import 'src/less/theme/components/image-preview/image-preview';
+// @import 'src/less/theme/components/image-tools/image-tools';
+// @import 'src/less/theme/components/insert-table-picker/insert-table-picker';
+@import 'src/less/theme/components/menu/menu';
+@import 'src/less/theme/components/menubar/menubar';
+// @import 'src/less/theme/components/menubar/promotion';
+@import 'src/less/theme/components/menubar/menubar-button';
+@import 'src/less/theme/components/notification/notification';
+@import 'src/less/theme/components/pop/pop';
+@import 'src/less/theme/components/sidebar/sidebar';
+@import 'src/less/theme/components/selector/selector';
+// @import 'src/less/theme/components/slider/slider';
+// @import 'src/less/theme/components/source-code/source-code';
+@import 'src/less/theme/components/spinner/spinner';
+@import 'src/less/theme/components/statusbar/statusbar';
+@import 'src/less/theme/components/throbber/throbber';
+@import 'src/less/theme/components/toolbar-button/toolbar-button';
+// @import 'src/less/theme/components/toolbar-button/toolbar-number-input';
+// @import 'src/less/theme/components/toolbar-button/toolbar-select-button';
+// @import 'src/less/theme/components/toolbar-button/toolbar-split-button';
+@import 'src/less/theme/components/toolbar/toolbar';
+@import 'src/less/theme/components/toolbar/toolbar-group';
+@import 'src/less/theme/components/tooltip/tooltip';
+// @import 'src/less/theme/components/tree/tree-button';
+// @import 'src/less/theme/components/revisionhistory/revisionhistory';
+@import 'src/less/theme/components/view/view';
+// @import 'src/less/theme/components/well/well';
+
+@import 'src/less/theme/alien/unknowns';
+
+// Config
+@prefix: tox;
+
+// Root variables
+@background-color: #fff;
+@base-value: 1rem;
+@color-black: #000;
+@color-tint: #007d7e;
+@color-white: #fff;
+@color-error: #cd4444;
+@color-success: #1b8666;
+@font-stack: var(--w-font-sans);
+
+// Content
+@content-ui-darkmode: false; // Change this to true to get white icons in the content such as bookmarks.
+
+// Colors
+@border-color: hsl(0 0% 78.4%);
+@text-color: #262626;
+@text-color-muted: #5c5c5c;
+
+// Some useful generic variables
+@panel-border-radius: 4px; // Dialogs, menues etc.
+@control-border-radius: 4px; // Buttons, input fields etc.
+
+// Global styling
+@tinymce-border-radius: 4px;
+@tinymce-border-width: 1px;
+
+// Focus outline
+@keyboard-focus-outline-width: 3px;
+@keyboard-focus-outline-color: #00a885;
+
+// Font
+@line-height-base: 1.5em;
+@font-weight-normal: 400;
+@font-weight-bold: 600;
+@font-size-base: @base-value;
+@font-size-xs: .8rem; // Absolute value to not make it too small
+@font-size-sm: @font-size-base * .875;
+@font-size-md: @font-size-base;
+@font-size-lg: @font-size-base * 1.25;
+
+// Spacings
+@pad-xs: @base-value / 4;
+@pad-sm: @base-value / 2;
+@pad-md: @base-value;
+@pad-lg: @base-value * 1.5;
+@pad-xl: @base-value * 2;
+
+// z-index stack (reserved range 1000-10000)
+@z-index-fullscreen: 4200;
+@z-index-resize-handle: 4298;
+@z-index-throbber: 4299;
+@z-index-sink: 4300;
+
+// sink z-index stack
+// Note: these are rendered inside the sink so aren't affected by the other global z-index variables
+@z-index-loading: 1000;
+@z-index-dialogs: 1100;
+@z-index-menu: 1150;
+
+// Responsive breakpoints
+@breakpoint-sm-value: 800px;
+@breakpoint-md: ~"only screen and (min-width:900px)";
+@breakpoint-sm: ~"only screen and (max-width:" @breakpoint-sm-value ~")";
+@breakpoint-gt-sm: ~"only screen and (min-width:" @breakpoint-sm-value + 1px ~")";
+
+//
+// Toolbar
+//
+
+@toolbar-separator-color: transparent;
+@toolbar-group-separator-color: #eee;
+@toolbar-row-separator-color: transparent;
+
+@editor-header-box-shadow: 0px 0px 12px rgba(0,0,0,.12);
+
+// Tooltip
+@tooltip-arrow-size: 0;
+@tooltip-padding-x: .75rem;
+@tooltip-padding-y: .75rem;
+@tooltip-background-color: #555;
+
+//
+// Edit area
+//
+
+// these are applied when the editor has the focus:
+@edit-area-border-width: 3px;
+@edit-area-border-color: @color-tint;
+
+//
+// Dialog
+//
+
+@dialog-backdrop-background-color: rgba(0, 0, 0, .7);
+@dialog-background-color: @background-color;
+
+@dialog-border-color: transparent;
+@dialog-border-radius: 2px;
+@dialog-border-width: 0px;
+@dialog-box-shadow: none;
+
+@dialog-header-padding: 1rem 1rem 0 1.5rem;
+@dialog-footer-padding: 0 1.5rem 1.5rem;
+@dialog-body-padding: 1.5rem;
+
+@dialog-title-font-size: 1.125rem;
+@dialog-body-font-size: @font-size-md;
+
+//
+// Form
+//
+
+// Layout
+@form-group-vertical-spacing: 1.5rem;
+@form-group-horizontal-spacing: 1rem;
+
+// Button
+@button-padding-x: 1.25rem;
+@button-padding-y: .5rem;
+
+@button-text-color: @color-white;
+@button-secondary-text-color: #606266;
+
+// Label
+@input-label-font-size: @font-size-base;
+@input-label-font-weight: @font-weight-bold;
+@input-label-line-height: 2em;
+@input-label-text-color: #2e1f5e;
+
+// Text field
+@textfield-font-family: @font-stack;
+@textfield-font-size: @font-size-md;
+@textfield-height: 2.625rem;
+@textfield-line-height: 1.5;
+@textfield-pad-x: 1.25rem;
+@textfield-pad-y: .5rem;
+@textfield-text-color: @text-color;
+
+@textfield-disabled-background-color: darken(@textfield-background-color, 5%);
+@textfield-disabled-text-color: fade(@textfield-text-color, 85%);
+
+@textfield-focus-background-color: @textfield-background-color;
+@textfield-focus-border-color: @keyboard-focus-outline-color;
+@textfield-focus-box-shadow: 0 0 0 2px @keyboard-focus-outline-color inset;
+@textfield-focus-outline: none !important;
+
+// Select
+
+@listbox-button-chevron-color: #a8abb2;

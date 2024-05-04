@@ -1,0 +1,176 @@
+// wagtail uses normalize, so let's use it for the content, too
+
+@import '../../../../../../node_modules/normalize.css/normalize.css';
+
+// content UI: we're only importing what we need
+
+@import 'src/less/theme/globals/global-variables';
+// @import 'src/less/theme/content/anchor/anchor';
+// @import 'src/less/theme/content/comments/comments';
+// @import 'src/less/theme/content/checklist/checklist';
+// @import 'src/less/theme/content/codesample/codesample';
+// @import 'src/less/theme/content/contenteditable/contenteditable';
+@import 'src/less/theme/content/cursors/cursors';
+// @import 'src/less/theme/content/footnotes/footnotes';
+// @import 'src/less/theme/content/media/media';
+// @import 'src/less/theme/content/mergetags/mergetag';
+// @import 'src/less/theme/content/object/object';
+// @import 'src/less/theme/content/pagebreak/pagebreak';
+// @import 'src/less/theme/content/pageembed/pageembed';
+// @import 'src/less/theme/content/placeholder/placeholder';
+// @import 'src/less/theme/content/resize-handles/resize-handle';
+// @import 'src/less/theme/content/rtc/rtc';
+// @import 'src/less/theme/content/searchreplace/searchreplace';
+@import 'src/less/theme/content/selection/selection';
+// @import 'src/less/theme/content/spellchecker/spellchecker';
+// @import 'src/less/theme/content/table-of-contents/table-of-contents';
+@import 'src/less/theme/content/transparent/transparent';
+// @import 'src/less/theme/content/table/table';
+// @import 'src/less/theme/content/visualblocks/visualblocks';
+// @import 'src/less/theme/content/visualchars/visualchars';
+
+// Variables
+@color-tint: #007d7e;
+
+html {
+  background-color: #fff;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  color: hsl(0 0% 14.9%); // --w-color-text-context
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif, Apple Color Emoji, "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5em;
+  margin: 1.5rem;
+
+  // iframe scrollbar, see end/src/assets/_mixins.scss
+  scrollbar-color: @color-tint transparent;
+  scrollbar-width: thin;
+}
+
+// iframe scrollbar, see end/src/assets/_mixins.scss
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-button {
+  display: none;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: @color-tint;
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #2e1f5e;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: @color-tint;
+  text-decoration: none;
+}
+
+a:hover {
+  color: hsl(181.9 100% 18.4%);
+  text-decoration: underline;
+}
+
+hr {
+  border: solid hsl(0 0% 87.8%);
+  border-width: 1px 0 0;
+  margin: 1.5em 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+// The following default content styles are from tinymce/skins/content/default/content.css
+// There's also dark content skin in tinymce/skins/content/dark/content.css
+
+/* Apply a default padding if legacy cellpadding attribute is missing */
+table:not([cellpadding]) th,
+table:not([cellpadding]) td {
+  padding: .4rem;
+}
+
+/* Set default table styles if a table has a positive border attribute
+   and no inline css */
+table[border]:not([border="0"]):not([style*="border-width"]) th,
+table[border]:not([border="0"]):not([style*="border-width"]) td {
+  border-width: 1px;
+}
+
+/* Set default table styles if a table has a positive border attribute
+   and no inline css */
+table[border]:not([border="0"]):not([style*="border-style"]) th,
+table[border]:not([border="0"]):not([style*="border-style"]) td {
+  border-style: solid;
+}
+
+/* Set default table styles if a table has a positive border attribute
+   and no inline css */
+table[border]:not([border="0"]):not([style*="border-color"]) th,
+table[border]:not([border="0"]):not([style*="border-color"]) td {
+  border-color: #ccc;
+}
+
+figure {
+  display: table;
+  margin: 1rem auto;
+}
+
+figure figcaption {
+  color: #999;
+  display: block;
+  margin-top: .25rem;
+  text-align: center;
+}
+
+code {
+  background-color: #e8e8e8;
+  border-radius: 3px;
+  padding: .1rem .2rem;
+}
+
+.mce-content-body:not([dir=rtl]) blockquote {
+  border-left: 2px solid #ccc;
+  margin-left: 1.5rem;
+  padding-left: 1rem;
+}
+
+.mce-content-body[dir=rtl] blockquote {
+  border-right: 2px solid #ccc;
+  margin-right: 1.5rem;
+  padding-right: 1rem;
+}

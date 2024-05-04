@@ -33,6 +33,7 @@
     "LICENSE.txt"
   ],
   "dependencies": {
+    "normalize.css": "^8.0.1",
     "prism-themes": "^1.9.0",
     "prismjs": "^1.27.0"
   },
