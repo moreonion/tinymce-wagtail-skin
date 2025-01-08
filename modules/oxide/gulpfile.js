@@ -154,10 +154,16 @@ gulp.task('copyToEnd', function () {
     .pipe(gulp.dest('../../../end/src/assets/tinymce'));
 })
 
+gulp.task('copyDarkModeToEnd', function () {
+  return gulp.src(['./build/skins/ui/wagtail-dark/skin.css', './build/skins/ui/wagtail-dark/content.min.css'])
+    .pipe(replace(/\n?\/\*#\s*sourceMappingURL=.*\.map\s*\*\//, ''))
+    .pipe(gulp.dest('../../../end/src/assets/tinymce/dark'));
+})
+
 //
 // Build project and watch LESS file changes
 //
-gulp.task('css', gulp.series('lint', 'less', 'generateJs', 'minifyCss', 'copyToEnd'));
+gulp.task('css', gulp.series('lint', 'less', 'generateJs', 'minifyCss', 'copyToEnd', 'copyDarkModeToEnd'));
 gulp.task('build', gulp.series('clean', 'css'));
 gulp.task('default', gulp.series('build'));
 
