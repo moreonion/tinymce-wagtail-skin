@@ -149,6 +149,7 @@ gulp.task('clean', function () {
 // copy output to the end (expects end root directory to be next to tinymce root)
 //
 gulp.task('copyToEnd', function () {
+
   return gulp.src([
     './build/skins/ui/wagtail/skin.css',
     './build/skins/ui/wagtail/content.min.css',
@@ -162,6 +163,7 @@ gulp.task('copyToEnd', function () {
         : '../../../end/src/assets/tinymce';
     }));
 })
+
 //
 // Build project and watch LESS file changes
 //
