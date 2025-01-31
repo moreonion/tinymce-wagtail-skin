@@ -18,7 +18,7 @@ module.exports = function (grunt) {
         src: ['./src/less/**/*.less']
       }
     },
-    // Minify CSS files
+        // Minify CSS files
     cssmin: {
       options: {
         rebase: false,
@@ -35,7 +35,7 @@ module.exports = function (grunt) {
         }]
       }
     },
-    // Watch files for changes and run tasks
+        // Watch files for changes and run tasks
     watch: {
       less: {
         files: './src/**/*.less',
@@ -53,32 +53,50 @@ module.exports = function (grunt) {
           livereload: true
         }
       }
+    },
+    // Here we configure grunt-string-replace for the copyToEnd task
+    'string-replace': {
+      copyToEnd: {
+        files: [
+          {
+            expand: true,
+            cwd: './build/skins/ui/wagtail/',
+            src: ['skin.css', 'content.min.css'],
+            dest: '../../../end/src/assets/tinymce/'
+          },
+          {
+            expand: true,
+            cwd: './build/skins/ui/wagtail-dark/',
+            src: ['skin.css', 'content.min.css'],
+            dest: '../../../end/src/assets/tinymce/dark/'
+          }
+        ],
+        options: {
+          replacements: [{
+            pattern: /\n?\/\*#\s*sourceMappingURL=.*\.map\s*\*\//g,
+            replacement: ''
+          }]
+        }
+      }
     }
   });
 
-  // load local grunt tasks
-  require('load-grunt-tasks')(grunt);
-  // load all grunt tasks from the parent config
+  // Load grunt tasks
   require('load-grunt-tasks')(grunt, {
     config: '../../package.json',
     pattern: ['grunt-*']
   });
+  // require('grunt-string-replace')(grunt);
 
-  //
-  // Build project and watch LESS file changes
-  //
-  // grunt.registerTask('css', [
-  //   'lint',
-  //   'less',
-  //   'generateJs',
-  //   'minifyCss'
-  // ]);
+  // Register your tasks
+
   grunt.registerTask('build', [
     'clean',
     'stylelint',
     'compileLess',
     'cssmin',
-    'generateJsSkins'
+    'generateJsSkins',
+    'string-replace:copyToEnd'
   ]);
 
   grunt.registerTask('start', [
@@ -90,5 +108,7 @@ module.exports = function (grunt) {
     'watch',
   ]);
 
-  grunt.registerTask('default', ['build', /* 'connect', */ 'watch']);
+  grunt.registerTask('copyToEnd', ['string-replace:copyToEnd']);
+
+  grunt.registerTask('default', ['build', 'watch']);
 };
