@@ -149,9 +149,19 @@ gulp.task('clean', function () {
 // copy output to the end (expects end root directory to be next to tinymce root)
 //
 gulp.task('copyToEnd', function () {
-  return gulp.src(['./build/skins/ui/wagtail/skin.css', './build/skins/ui/wagtail/content.min.css'])
+
+  return gulp.src([
+    './build/skins/ui/wagtail/skin.css',
+    './build/skins/ui/wagtail/content.min.css',
+    './build/skins/ui/wagtail-dark/skin.css',
+    './build/skins/ui/wagtail-dark/content.min.css'
+  ])
     .pipe(replace(/\n?\/\*#\s*sourceMappingURL=.*\.map\s*\*\//, ''))
-    .pipe(gulp.dest('../../../end/src/assets/tinymce'));
+    .pipe(gulp.dest(function(file) {
+      return file.path.includes('wagtail-dark')
+        ? '../../../end/src/assets/tinymce/dark'
+        : '../../../end/src/assets/tinymce';
+    }));
 })
 
 //

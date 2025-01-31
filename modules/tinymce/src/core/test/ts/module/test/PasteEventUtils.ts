@@ -70,7 +70,12 @@ const pWaitForAndAssertInputEvents = async (beforeinputEvent: SingletonEvent<Inp
   const assertInputEvent = (): void =>
     inputEvent.on((e) => {
       assert.equal(e.inputType, 'insertFromPaste', 'beforeinput event type should be "insertFromPaste"');
-      assert.isNull(e.data, 'input event data should be null');
+      // TINY-11373: Chromium >= 129, e.data is no longer null when pasting plain text
+      if (isNative && browser.isChromium() && browser.version.major >= 129) {
+        assert.isNotNull(e.data, 'input event data should not be null');
+      } else {
+        assert.isNull(e.data, 'input event data should be null');
+      }
       const dataTransfer = e.dataTransfer;
       if (isNative && (browser.isFirefox() || browser.isSafari())) {
         assert.equal(dataTransfer?.getData('text/html'), expectedBeforeinputDataTransferHtml, 'input event dataTransfer should contain expected html data');
@@ -87,8 +92,12 @@ const pWaitForAndAssertInputEvents = async (beforeinputEvent: SingletonEvent<Inp
 const pWaitForAndAssertEventsDoNotFire = async (events: SingletonEvent<any>[]): Promise<void> => {
   const thrown = Cell<boolean>(false);
   try {
-    await Waiter.pTryUntilPredicate('Did not fire any paste event',
-      () => Arr.exists(events, (e) => e.isSet()));
+    await Waiter.pTryUntilPredicate(
+      'Did not fire any paste event',
+      () => Arr.exists(events, (e) => e.isSet()),
+      100,
+      500
+    );
   } catch {
     thrown.set(true);
   }
