@@ -6,7 +6,7 @@ The skin for the end™ is developed in the [wagtail-skin](https://github.com/mo
 
 See the [oxide README](https://github.com/moreonion/tinymce-wagtail-skin/blob/wagtail-skin/modules/oxide/README.md) for more instructions.
 
-The skin is located in [modules/oxide/src/less/skins/ui/wagtail](https://github.com/moreonion/tinymce-wagtail-skin/tree/wagtail-skin/modules/oxide/src/less/skins/ui/wagtail).
+Wagtail and wagtail-dark skins are located in [modules/oxide/src/less/skins/ui/wagtail](https://github.com/moreonion/tinymce-wagtail-skin/tree/wagtail-skin/modules/oxide/src/less/skins/ui/wagtail) and [modules/oxide/src/less/skins/ui/wagtail-dark](https://github.com/moreonion/tinymce-wagtail-skin/tree/wagtail-skin/modules/oxide/src/less/skins/ui/wagtail-dark).
 
 ## TinyMCE
 
