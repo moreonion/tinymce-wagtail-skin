@@ -53,6 +53,23 @@ module.exports = function (grunt) {
           livereload: true
         }
       }
+    },
+    // Process and add styles to the End repository
+    'string-replace': {
+      copyToEnd: {
+        files: [{
+          expand: true,
+          cwd: './build/skins/ui/wagtail/',
+          src: ['skin.css', 'content.min.css'],
+          dest: '../../../end/src/assets/tinymce/'
+        }],
+        options: {
+          replacements: [{
+            pattern: /\n?\/\*#\s*sourceMappingURL=.*\.map\s*\*\//g,
+            replacement: ''
+          }]
+        }
+      }
     }
   });
 
@@ -78,7 +95,8 @@ module.exports = function (grunt) {
     'stylelint',
     'compileLess',
     'cssmin',
-    'generateJsSkins'
+    'generateJsSkins',
+    'string-replace:copyToEnd'
   ]);
 
   grunt.registerTask('start', [
@@ -89,6 +107,8 @@ module.exports = function (grunt) {
     'connect',
     'watch',
   ]);
+
+  grunt.registerTask('copyToEnd', ['string-replace:copyToEnd']);
 
   grunt.registerTask('default', ['build', /* 'connect', */ 'watch']);
 };
