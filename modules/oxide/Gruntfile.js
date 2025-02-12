@@ -62,6 +62,12 @@ module.exports = function (grunt) {
           cwd: './build/skins/ui/wagtail/',
           src: ['skin.css', 'content.min.css'],
           dest: '../../../end/src/assets/tinymce/'
+        },
+        {
+          expand: true,
+          cwd: './build/skins/ui/wagtail-dark/',
+          src: ['skin.css', 'content.min.css'],
+          dest: '../../../end/src/assets/tinymce/dark/'
         }],
         options: {
           replacements: [{
