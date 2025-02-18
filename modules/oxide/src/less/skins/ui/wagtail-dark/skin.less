@@ -75,21 +75,21 @@
 @prefix: tox;
 
 // Root variables
-@background-color: #fff;
+@background-color: hsl(0, 0%, 14.9%);
 @base-value: 1rem;
 @color-black: #000;
 @color-tint: #007d7e;
-@color-white: #fff;
+@color-white: white;
 @color-error: #cd4444;
 @color-success: #1b8666;
 @font-stack: var(--w-font-sans);
 
 // Content
-@content-ui-darkmode: false; // Change this to true to get white icons in the content such as bookmarks.
+@content-ui-darkmode: true; // Change this to true to get white icons in the content such as bookmarks.
 
 // Colors
-@border-color: hsl(0 0% 78.4%);
-@text-color: #262626;
+@border-color: hsl(0, 0%, 36.1%);
+@text-color: @color-white;
 @text-color-muted: #5c5c5c;
 
 // Some useful generic variables
@@ -136,25 +136,24 @@
 // Responsive breakpoints
 @breakpoint-sm-value: 800px;
 @breakpoint-md: ~"only screen and (min-width:900px)";
-@breakpoint-sm: ~"only screen and (max-width:" @breakpoint-sm-value ~")";
-@breakpoint-gt-sm: ~"only screen and (min-width:" @breakpoint-sm-value + 1px ~")";
+@breakpoint-sm: ~"only screen and (max-width:"@breakpoint-sm-value ~")";
+@breakpoint-gt-sm: ~"only screen and (min-width:"@breakpoint-sm-value + 1px ~")";
 
 //
 // Toolbar
 //
 
 @toolbar-separator-color: transparent;
-@toolbar-group-separator-color: #eee;
 @toolbar-row-separator-color: transparent;
 @toolbar-button-bespoke-focus-background-color: @toolbar-button-focus-background-color;
 
-@editor-header-box-shadow: 0px 0px 12px rgba(0,0,0,.12);
+@editor-header-box-shadow: 0px 0px 12px rgba(0, 0, 0, .12);
 
 // Tooltip
 @tooltip-arrow-size: 0;
 @tooltip-padding-x: .75rem;
 @tooltip-padding-y: .75rem;
-@tooltip-background-color: #555;
+@tooltip-background-color: black;
 
 //
 // Edit area
@@ -181,8 +180,8 @@
 @dialog-body-padding: 1.5rem;
 
 @dialog-title-font-size: 1.125rem;
+@dialog-title-color: @color-white;
 @dialog-body-font-size: @font-size-md;
-
 //
 // Form
 //
@@ -196,13 +195,13 @@
 @button-padding-y: .5rem;
 
 @button-text-color: @color-white;
-@button-secondary-text-color: #606266;
+@button-secondary-text-color: @color-white;
 
 // Label
 @input-label-font-size: @font-size-base;
 @input-label-font-weight: @font-weight-bold;
 @input-label-line-height: 2em;
-@input-label-text-color: #2e1f5e;
+@input-label-text-color: @color-white;
 
 // Text field
 @textfield-font-family: @font-stack;
