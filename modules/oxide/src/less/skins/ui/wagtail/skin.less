@@ -82,6 +82,9 @@
 @ist-pink-tint: #fcebf9;
 @ist-orange: #fcaeb7;
 @ist-error: #941807;
+@button-primary-background-solid: @ist-orange;
+@button-primary-hover-solid: @ist-pink-light;
+@button-primary-text-solid: @ist-black;
 
 // Root variables
 @background-color: #fff;
@@ -204,12 +207,12 @@
 @button-padding-x: 1.25rem;
 @button-padding-y: .5rem;
 
-@button-background-color: @ist-orange;
-@button-border-color: @ist-orange;
-@button-text-color: @ist-black;
-@button-hover-background-color: @ist-pink-light;
-@button-hover-border-color: @ist-pink-light;
-@button-hover-text-color: @ist-black;
+@button-background-color: @button-primary-background-solid;
+@button-border-color: @button-primary-background-solid;
+@button-text-color: @button-primary-text-solid;
+@button-hover-background-color: @button-primary-hover-solid;
+@button-hover-border-color: @button-primary-hover-solid;
+@button-hover-text-color: @button-primary-text-solid;
 @button-secondary-text-color: #606266;
 
 .tox .tox-dialog__footer .tox-button:not(.tox-button--secondary) {

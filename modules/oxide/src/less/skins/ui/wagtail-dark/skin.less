@@ -10,11 +10,15 @@
 @color-white: #fff;
 @color-error: #f59689;
 @color-success: #ebfcae;
+@button-primary-background-solid: #fcaeb7;
+@button-primary-hover-solid: #fcaeeb;
+@button-primary-active-solid: #962c7f;
+@button-primary-text-solid: #141113;
 @content-ui-darkmode: true;
 @border-color: fade(@color-white, 36%);
 @text-color: @color-white;
 @text-color-muted: fade(@color-white, 70%);
-@keyboard-focus-outline-color: #fcaeeb;
+@keyboard-focus-outline-color: @color-tint;
 
 @editor-header-inline-background-color: @editor-surface-color;
 @toolbar-background-color: @editor-surface-color;
@@ -34,31 +38,31 @@
 @dialog-body-link-active-color: lighten(@color-tint, 12%);
 @dialog-body-link-focus-outline-color: @color-tint;
 
-@button-background-color: #fcaeb7;
-@button-border-color: #fcaeb7;
-@button-text-color: #141113;
-@button-hover-background-color: #fcaeeb;
-@button-hover-border-color: #fcaeeb;
-@button-hover-text-color: #141113;
-@button-active-background-color: #962c7f;
-@button-active-border-color: #962c7f;
+@button-background-color: @button-primary-background-solid;
+@button-border-color: @button-primary-background-solid;
+@button-text-color: @button-primary-text-solid;
+@button-hover-background-color: @button-primary-hover-solid;
+@button-hover-border-color: @button-primary-hover-solid;
+@button-hover-text-color: @button-primary-text-solid;
+@button-active-background-color: @button-primary-active-solid;
+@button-active-border-color: @button-primary-active-solid;
 @button-active-text-color: @color-white;
 @button-secondary-background-color: fade(@color-white, 10%);
 @button-secondary-border-color: fade(@color-white, 18%);
 @button-secondary-text-color: @color-white;
-@button-secondary-hover-background-color: fade(#fcaeeb, 22%);
-@button-secondary-hover-border-color: fade(#fcaeeb, 55%);
+@button-secondary-hover-background-color: fade(@color-tint, 22%);
+@button-secondary-hover-border-color: fade(@color-tint, 55%);
 @button-secondary-hover-text-color: @color-white;
-@button-secondary-active-background-color: fade(#fcaeeb, 28%);
-@button-secondary-active-border-color: fade(#fcaeeb, 55%);
+@button-secondary-active-background-color: fade(@color-tint, 28%);
+@button-secondary-active-border-color: fade(@color-tint, 55%);
 @button-secondary-active-text-color: @color-white;
 
-@toolbar-button-enabled-background-color: fade(#fcaeeb, 25%);
+@toolbar-button-enabled-background-color: fade(@color-tint, 25%);
 @toolbar-button-enabled-icon-color: @color-white;
 @toolbar-button-enabled-text-color: @color-white;
-@collection-list-item-active-background-color: fade(#fcaeeb, 22%);
+@collection-list-item-active-background-color: fade(@color-tint, 22%);
 @collection-list-item-label-active-text-color: @color-white;
-@collection-list-item-enabled-background-color: fade(#fcaeeb, 15%);
+@collection-list-item-enabled-background-color: fade(@color-tint, 15%);
 @collection-list-item-label-enabled-text-color: @color-white;
 
 @input-label-text-color: @color-white;
@@ -69,14 +73,14 @@
 @textfield-focus-border-color: @color-tint;
 @textfield-focus-box-shadow: 0 0 0 2px @color-tint inset;
 
-@notification-success-background-color: fade(#ebfcae, 20%);
-@notification-success-border-color: fade(#ebfcae, 45%);
+@notification-success-background-color: fade(@color-success, 20%);
+@notification-success-border-color: fade(@color-success, 45%);
 @notification-success-text-color: @color-white;
-@notification-error-background-color: fade(#f59689, 22%);
-@notification-error-border-color: fade(#f59689, 55%);
+@notification-error-background-color: fade(@color-error, 22%);
+@notification-error-border-color: fade(@color-error, 55%);
 @notification-error-text-color: @color-white;
-@notification-info-background-color: fade(#fcaeeb, 16%);
-@notification-info-border-color: fade(#fcaeeb, 40%);
+@notification-info-background-color: fade(@color-tint, 16%);
+@notification-info-border-color: fade(@color-tint, 40%);
 @notification-info-text-color: @color-white;
 
 .tox .tox-dialog,
