@@ -1,0 +1,228 @@
+@import '../wagtail/skin';
+
+@ist-black: #141113;
+@ist-pink: #962c7f;
+@background-color: #291c25;
+@editor-surface-color: #292327;
+@editor-surface-css-color: var(--w-color-surface-page, @editor-surface-color);
+@color-black: @ist-black;
+@color-tint: #fcaeeb;
+@color-white: #fff;
+@color-error: #f59689;
+@color-success: #ebfcae;
+@button-primary-background-solid: #fcaeb7;
+@button-primary-hover-solid: #fcaeeb;
+@button-primary-active-solid: #962c7f;
+@button-primary-text-solid: #141113;
+@content-ui-darkmode: true;
+@border-color: fade(@color-white, 36%);
+@text-color: @color-white;
+@text-color-muted: fade(@color-white, 70%);
+@keyboard-focus-outline-color: @color-tint;
+
+@editor-header-inline-background-color: @editor-surface-color;
+@toolbar-background-color: @editor-surface-color;
+@toolbar-button-background-color: @editor-surface-color;
+@toolbar-button-focus-background-color: @editor-surface-color;
+@toolbar-button-disabled-background-color: @editor-surface-color;
+@toolbar-group-separator-color: @border-color;
+@statusbar-background-color: @editor-surface-color;
+@pop-background-color: @background-color;
+@tooltip-background-color: @ist-black;
+@dialog-background-color: @editor-surface-color;
+@dialog-header-background-color: @editor-surface-color;
+@dialog-footer-background-color: @editor-surface-color;
+@dialog-title-color: @color-white;
+@dialog-body-link-color: @color-tint;
+@dialog-body-link-hover-color: lighten(@color-tint, 8%);
+@dialog-body-link-active-color: lighten(@color-tint, 12%);
+@dialog-body-link-focus-outline-color: @color-tint;
+
+@button-background-color: @button-primary-background-solid;
+@button-border-color: @button-primary-background-solid;
+@button-text-color: @button-primary-text-solid;
+@button-hover-background-color: @button-primary-hover-solid;
+@button-hover-border-color: @button-primary-hover-solid;
+@button-hover-text-color: @button-primary-text-solid;
+@button-active-background-color: @button-primary-active-solid;
+@button-active-border-color: @button-primary-active-solid;
+@button-active-text-color: @color-white;
+@button-secondary-background-color: fade(@color-white, 10%);
+@button-secondary-border-color: fade(@color-white, 18%);
+@button-secondary-text-color: @color-white;
+@button-secondary-hover-background-color: fade(@color-tint, 22%);
+@button-secondary-hover-border-color: fade(@color-tint, 55%);
+@button-secondary-hover-text-color: @color-white;
+@button-secondary-active-background-color: fade(@color-tint, 28%);
+@button-secondary-active-border-color: fade(@color-tint, 55%);
+@button-secondary-active-text-color: @color-white;
+
+@toolbar-button-enabled-background-color: fade(@color-tint, 25%);
+@toolbar-button-enabled-icon-color: @color-white;
+@toolbar-button-enabled-text-color: @color-white;
+@collection-list-item-active-background-color: fade(@color-tint, 22%);
+@collection-list-item-label-active-text-color: @color-white;
+@collection-list-item-enabled-background-color: fade(@color-tint, 15%);
+@collection-list-item-label-enabled-text-color: @color-white;
+
+@input-label-text-color: @color-white;
+@edit-area-iframe-background-color: @editor-surface-color;
+@textfield-background-color: @editor-surface-color;
+@textfield-focus-background-color: @editor-surface-color;
+@textfield-text-color: @text-color;
+@textfield-focus-border-color: @color-tint;
+@textfield-focus-box-shadow: 0 0 0 2px @color-tint inset;
+
+@notification-success-background-color: fade(@color-success, 20%);
+@notification-success-border-color: fade(@color-success, 45%);
+@notification-success-text-color: @color-white;
+@notification-error-background-color: fade(@color-error, 22%);
+@notification-error-border-color: fade(@color-error, 55%);
+@notification-error-text-color: @color-white;
+@notification-info-background-color: fade(@color-tint, 16%);
+@notification-info-border-color: fade(@color-tint, 40%);
+@notification-info-text-color: @color-white;
+
+.tox .tox-dialog,
+.tox .tox-dialog__header,
+.tox .tox-dialog__footer {
+  background-color: @editor-surface-css-color;
+}
+
+.tox .tox-dialog .tox-textfield,
+.tox .tox-dialog .tox-textarea,
+.tox .tox-dialog .tox-listboxfield .tox-listbox--select {
+  background-color: @editor-surface-css-color;
+}
+
+.tox .tox-dialog .tox-textfield:focus,
+.tox .tox-dialog .tox-textarea:focus,
+.tox .tox-dialog .tox-listboxfield .tox-listbox--select:focus {
+  background-color: @editor-surface-css-color;
+}
+
+.tox .tox-dialog__footer .tox-button:not(.tox-button--secondary) {
+  background-color: @ist-pink;
+  border-color: @ist-pink;
+  color: @color-white;
+
+  &:focus:not(:disabled),
+  &:hover:not(:disabled) {
+    background-color: lighten(@ist-pink, 6%);
+    border-color: lighten(@ist-pink, 6%);
+    color: @color-white;
+  }
+
+  &:active:not(:disabled) {
+    background-color: darken(@ist-pink, 6%);
+    border-color: darken(@ist-pink, 6%);
+    color: @color-white;
+  }
+}
+
+.tox:not(.tox-tinymce-inline) .tox-editor-header {
+  background-color: @editor-surface-css-color;
+}
+
+.tox .tox-toolbar-overlord,
+.tox .tox-toolbar,
+.tox .tox-toolbar__primary,
+.tox .tox-toolbar__overflow {
+  background-color: @editor-surface-css-color;
+}
+
+.tox .tox-edit-area {
+  background-color: @editor-surface-css-color;
+}
+
+.tox .tox-edit-area__iframe {
+  animation: tox-wagtail-dark-iframe-ready 120ms steps(1, end) forwards;
+  background-color: @editor-surface-css-color;
+  opacity: 0;
+}
+
+.tox .tox-statusbar {
+  background-color: @editor-surface-css-color;
+}
+
+.tox .mce-codemirror {
+  background: @editor-surface-css-color;
+
+  .CodeMirror,
+  .CodeMirror-scroll {
+    background: @editor-surface-css-color;
+    color: @text-color;
+  }
+
+  .CodeMirror-gutters {
+    background: @ist-black;
+    border-right-color: fade(@color-white, 16%);
+  }
+
+  .CodeMirror-linenumber {
+    color: fade(@color-white, 55%);
+  }
+
+  .CodeMirror-cursor {
+    border-left-color: @color-tint;
+  }
+
+  .CodeMirror-activeline-background {
+    background: fade(@color-white, 8%);
+  }
+
+  .CodeMirror-activeline-gutter {
+    background: fade(@color-tint, 16%);
+  }
+
+  .CodeMirror-selected {
+    background: fade(@color-tint, 28%);
+  }
+
+  .CodeMirror-matchingbracket {
+    color: @color-tint;
+    outline-color: @color-tint;
+  }
+
+  .CodeMirror pre,
+  .cm-def,
+  .cm-variable,
+  .cm-variable-2,
+  .cm-variable-3 {
+    color: @text-color;
+  }
+
+  .cm-tag,
+  .cm-bracket {
+    color: #f59689;
+  }
+
+  .cm-attribute,
+  .cm-keyword,
+  .cm-qualifier {
+    color: @color-tint;
+  }
+
+  .cm-string {
+    color: @color-success;
+  }
+
+  .cm-number {
+    color: #fcf2ae;
+  }
+
+  .cm-comment {
+    color: fade(@color-white, 55%);
+  }
+
+  .cm-error {
+    background: fade(#f59689, 20%);
+    color: #f59689;
+  }
+}
+
+@keyframes tox-wagtail-dark-iframe-ready {
+  to {
+    opacity: 1;
+  }
+}
